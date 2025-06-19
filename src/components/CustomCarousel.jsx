@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import PortfolioButton from "./PortfolioButon";
+import CustomButton from "./CustomButton";
+import ARROW_ICON from "../assets/icons/icon-arrow.svg";
 
 const images = [
   "./images/paramour.svg",
@@ -64,7 +65,15 @@ export function CustomCarousel() {
                     {description[index]}
                   </p>
                 )}
-                <PortfolioButton />
+                <CustomButton
+                  to="/portfolio"
+                  className="flex items-center justify-center mt-[5.19rem] py-[1.56rem] gap-[1.5rem] font-spartan max-w-[15.75rem] w-full bg-very-dark-blue text-white text-right text-[1.125rem] font-bold non-italic leading-[1.525rem]"
+                >
+                  See Our Portfolio{" "}
+                  <span>
+                    <img src={ARROW_ICON} alt="Arrow icon" />
+                  </span>
+                </CustomButton>
               </div>
               <img
                 src={img}
@@ -82,7 +91,7 @@ export function CustomCarousel() {
           <button
             key={index}
             onClick={() => scrollTo(index)}
-            className={`lg:max-w-[5rem] lg:w-full lg:h-[5rem] lg:px-[1.94rem] lg:text-[1.125rem] lg:text-center lg:font-bold font-spartan hiddenlg:block w-full max-w-8 md:h-8 md:text-sm md:font-medium border border-white
+            className={`lg:max-w-[5rem] lg:w-full lg:h-[5rem] lg:px-[1.94rem] lg:text-[1.125rem] lg:text-center lg:font-bold font-spartan hidden lg:block w-full max-w-8 md:h-8 md:text-sm md:font-medium border border-white
               ${
                 selectedIndex === index
                   ? "bg-very-dark-blue text-white"

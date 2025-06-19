@@ -1,5 +1,11 @@
-import Navbar from "../components/Navbar";
 import { CustomCarousel } from "../components/CustomCarousel";
+
+import Navbar from "../components/Navbar";
+import Heading from "../components/Heading";
+import IntroductionSection from "../components/IntroductionSection";
+import AboutTeaser from "../components/AboutTeaser";
+import FeaturedProjectsSection from "../components/FeaturedProjectsSection";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -8,6 +14,13 @@ const HomePage = () => {
       <section className="md:ml-[8.3rem] md:max-w-[35.8125rem] md:w-full ">
         <CustomCarousel />
       </section>
+      <section>
+        <Heading>Welcome</Heading>
+        <IntroductionSection />
+      </section>
+      <AboutTeaser />
+      <FeaturedProjectsSection />
+      <Footer />
     </>
   );
 };

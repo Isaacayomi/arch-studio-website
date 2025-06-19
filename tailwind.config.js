@@ -15,9 +15,9 @@ export default {
         "error-red": "hsl(0, 68%, 61%)",
         white: "#ffffff",
         "link-color": "hsla(224, 8%, 53%, 1)",
+        "heading-color": "hsla(224, 23%, 94%, 1)",
       },
     },
-    // backgroundImage: {}
   },
   plugins: [],
 };
