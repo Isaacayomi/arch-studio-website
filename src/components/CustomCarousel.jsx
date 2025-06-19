@@ -48,19 +48,19 @@ export function CustomCarousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="max-w-xl mx-auto">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
+    <div className="w-full max-w-xl mx-auto relative lg:max-w-none lg:w-[69.375rem] lg:ml-[4rem]">
+      <div className="overflow-hidden " ref={emblaRef}>
+        <div className="flex ">
           {images.map((img, index) => (
-            <div className="min-w-full relative" key={index}>
-              <div className="absolute text-white font-spartan  px-[2rem]">
+            <div className="min-w-full relative " key={index}>
+              <div className="absolute text-white font-spartan px-[2rem] lg:ml-[11.87rem]">
                 {headings[index] && (
-                  <h1 className="text-[3rem] font-bold leading-[3rem] tracking-[-0.075rem] w-full max-w-[19.4375rem] not-italic mt-[7.25rem] mb-[0.69rem]">
+                  <h1 className="text-[3rem] font-bold leading-[3rem] tracking-[-0.075rem] w-full max-w-[19.4375rem] not-italic mt-[7.25rem] mb-[0.69rem] md:max-w-[28.5625rem] md:w-full md:text-[6rem] md:leading-[5rem] md:mt-[11.62rem] lg:max-w-[34rem] lg:w-full lg:font-bold ">
                     {headings[index]}
                   </h1>
                 )}
                 {description[index] && (
-                  <p className="w-full max-w-[19.4375rem]">
+                  <p className="w-full max-w-[19.4375rem] md:text-[1.125rem] md:max-w-[28.5625rem] md:w-full md:font-medium lg:max-w-[27.8125rem] lg:w-full">
                     {description[index]}
                   </p>
                 )}
@@ -69,7 +69,7 @@ export function CustomCarousel() {
               <img
                 src={img}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-[35rem] object-cover"
+                className="w-full h-[35rem] object-cover md:mt-[0.8rem] md:h-[45rem]  lg:max-w-[69.375rem] lg:w-full"
               />
             </div>
           ))}
@@ -77,16 +77,16 @@ export function CustomCarousel() {
       </div>
 
       {/* Buttons 1–4 */}
-      <div className="flex justify-center mt-4 gap-2">
+      <div className="absolute bottom-0 flex justify-center lg:ml-[-4.2rem] ">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollTo(index)}
-            className={`hidden md:block w-full max-w-8 md:h-8 md:rounded-full md:text-sm md:font-medium border 
+            className={`lg:max-w-[5rem] lg:w-full lg:h-[5rem] lg:px-[1.94rem] lg:text-[1.125rem] lg:text-center lg:font-bold font-spartan hiddenlg:block w-full max-w-8 md:h-8 md:text-sm md:font-medium border border-white
               ${
                 selectedIndex === index
-                  ? "bg-black text-white"
-                  : "bg-white text-black border-black"
+                  ? "bg-very-dark-blue text-white"
+                  : "bg-white text-medium-gey "
               }`}
           >
             {index + 1}

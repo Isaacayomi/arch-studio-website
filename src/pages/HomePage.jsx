@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
-      <section>
+      <section className="md:ml-[8.3rem] md:max-w-[35.8125rem] md:w-full ">
         <CustomCarousel />
       </section>
     </>
