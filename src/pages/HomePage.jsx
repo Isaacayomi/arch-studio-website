@@ -1,11 +1,14 @@
 import Navbar from "../components/Navbar";
+import { CustomCarousel } from "../components/CustomCarousel";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <h1>Homepage</h1>
-    </div>
+      <section>
+        <CustomCarousel />
+      </section>
+    </>
   );
 };
 export default HomePage;

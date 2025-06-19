@@ -8,7 +8,7 @@ export default {
       spartan: ["League Spartan", "sans-serif"],
     },
     colors: {
-      "very-dark-blue": "hsl(225, 13%, 12%)",
+      "very-dark-blue": "hsl(224, 14%, 12%,1)",
       "dark-grey": "hsl(226, 6%, 40%)",
       "medium-gey": "hsl(223, 7%, 53%)",
       "light-grey": "hsl(225, 17%, 82%)",
