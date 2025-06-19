@@ -19,12 +19,13 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="relative md:flex md:gap-[4.93rem] md:items-center md:justify-center lg:justify-start lg:pl-[10.25rem]">
+      <div className="relative z-40 md:flex md:gap-[4.93rem] md:items-center md:justify-center lg:justify-start lg:pl-[10.25rem]">
         <img
           src={HOME_ICON}
           alt="home-icon"
           className="hidden md:block border-r-error-red absolute left-0 top-0 pl-[3.94rem]"
         />
+
         <nav className="flex items-center justify-between p-[2rem] md:self-start">
           <Link to="/" className="outline-none">
             <img src="./logo.svg" alt="Logo" className="cursor-pointer" />
@@ -33,7 +34,7 @@ const Navbar = () => {
           <button className="md:hidden" onClick={() => setToggle(!toggle)}>
             <img
               src={toggle ? ICON_CLOSE : ICON_HAMBURGER}
-              alt="close HAMBURGER"
+              alt="menu toggle"
               className="cursor-pointer"
             />
           </button>
@@ -42,9 +43,9 @@ const Navbar = () => {
         <div
           className={`${toggle ? "flex" : "hidden"} md:flex md:items-center`}
         >
-          <ul className=" absolute md:relative   ">
-            <div className="flex flex-col justify-center items-start font-spartan text-[2rem] font-bold leading-[2.5rem] bg-very-light-grey md:pt-[1.2rem] md:flex-row md:text-[1.125rem] md:text-link-color md:gap-[3.81rem] md:bg-transparent">
-              <li className="pb-[1.06rem] md:cursor-pointer ">
+          <ul className="absolute top-full left-0 w-full px-[2rem] md:relative md:px-0">
+            <div className="flex flex-col items-start pl-[3rem] py-[2.44rem] font-spartan text-[2rem] font-bold leading-[2.5rem] bg-very-light-grey  md:flex-row md:text-[1.125rem] md:text-link-color md:gap-[3.81rem] md:bg-transparent md:pt-[2rem]">
+              <li className="pb-[1.06rem] md:cursor-pointer">
                 <Link to="/portfolio" className="md:hover:text-very-dark-blue">
                   Portfolio
                 </Link>
@@ -57,7 +58,7 @@ const Navbar = () => {
                   About Us
                 </Link>
               </li>
-              <li className="pb-[1.06rem] md:cursor-pointer ">
+              <li className="pb-[1.06rem] md:cursor-pointer">
                 <Link to="/contact" className="md:hover:text-very-dark-blue">
                   Contact
                 </Link>
@@ -69,4 +70,5 @@ const Navbar = () => {
     </>
   );
 };
+
 export default Navbar;
