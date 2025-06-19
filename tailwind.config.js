@@ -1,0 +1,22 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+    // backgroundImage: {}
+    fontFamily: {
+      spartan: ["League Spartan", "sans-serif"],
+    },
+    colors: {
+      "very-dark-blue": "hsl(225, 13%, 12%)",
+      "dark-grey": "hsl(226, 6%, 40%)",
+      "medium-gey": "hsl(223, 7%, 53%)",
+      "light-grey": "hsl(225, 17%, 82%)",
+      "very-light-grey": "hsl(230, 21%, 95%)",
+      "error-red": "hsl(0, 68%, 61%)",
+      white: "#ffffff",
+      "link-color": "hsla(224, 8%, 53%, 1)",
+    },
+  },
+  plugins: [],
+};
