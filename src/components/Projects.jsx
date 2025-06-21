@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 const Project = ({ src, title, num }) => {
   return (
-    <div className="max-w-[35.75rem] mx-auto mt-[2.69rem] relative px-[2rem] h-auto md:max-w-[42rem] md:h-[15rem]">
+    <div className="max-w-[35.75rem] mx-auto mt-[2.69rem] relative px-[2rem] h-auto md:max-w-[42rem] md:h-[15rem] lg:h-[35rem] lg:max-w-[21.875rem] lg:m-0 lg:px-0">
       <img
-        className="relative w-full mx-auto md:mb-[1.5rem] md:h-full"
+        className="relative w-full mx-auto md:mb-[1.5rem] md:h-full lg:h-full object-cover lg:p-0"
         src={src}
         alt="project"
       />
-      <span className="hidden md:block absolute top-0 right-24 text-white font-spartan text-[15.625rem] font-bold leading-[12.5rem] tracking-[-0.3125rem] opacity-50 pt-[1.5rem] h-[12.5rem] ">
+      <span className="hidden md:block absolute top-0 right-24 text-white font-spartan text-[15.625rem] font-bold leading-[12.5rem] tracking-[-0.3125rem] opacity-50 pt-[1.5rem] h-[12.5rem] lg:right-0">
         {num}
       </span>
       <div className="relative "></div>

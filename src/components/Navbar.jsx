@@ -1,11 +1,23 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ICON_CLOSE from "../assets/icons/icon-close.svg";
 import ICON_HAMBURGER from "../assets/icons/icon-hamburger.svg";
 import HOME_ICON from "../assets/icons/home-icon.svg";
+import PORTFOLIO_ICON from "../assets/icons/portfolio-icon.png";
+import ABOUT_ICON from "../assets/icons/about-icon.png";
+import CONTACT_ICON from "../assets/icons/contact-icon.png";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const location = useLocation();
+
+  const pageMap = {
+    "/": HOME_ICON,
+    "/portfolio": PORTFOLIO_ICON,
+    "/about": ABOUT_ICON,
+    "/contact": CONTACT_ICON,
+  };
+  const pageIndex = pageMap[location.pathname];
 
   useEffect(() => {
     if (toggle) {
@@ -21,9 +33,9 @@ const Navbar = () => {
     <>
       <div className="relative z-40 md:flex md:gap-[4.93rem] md:items-center md:justify-center lg:justify-start lg:pl-[10.25rem]">
         <img
-          src={HOME_ICON}
-          alt="home-icon"
-          className="hidden md:block border-r-error-red absolute left-0 top-0 pl-[3.94rem]"
+          src={pageIndex}
+          alt={pageIndex}
+          className="hidden md:block  absolute left-0 top-0 pl-[3.94rem]"
         />
 
         <nav className="flex items-center justify-between p-[2rem] md:self-start">

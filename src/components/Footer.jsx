@@ -5,7 +5,7 @@ import ARROW_ICON from "../assets/icons/icon-arrow.svg";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full h-[23.9375rem] mt-[8.25rem] bg-heading-color md:h-[7.5rem]  lg:w-full lg:mx-auto lg:max-w-[69.375rem] ">
+    <footer className="relative w-full h-[23.9375rem] mt-[8.25rem] bg-heading-color md:h-[7.5rem]  lg:w-full lg:mx-auto lg:max-w-[69.375rem] lg:ml-[7rem] xl:ml-[9rem] ">
       <Link to="/">
         <img
           src={ICON}
