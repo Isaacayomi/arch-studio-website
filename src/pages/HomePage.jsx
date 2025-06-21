@@ -14,7 +14,7 @@ const HomePage = () => {
       <section className="md:ml-[8.3rem] md:max-w-[35.8125rem] md:w-full ">
         <CustomCarousel />
       </section>
-      <section>
+      <section className="lg:relative lg:w-full lg:px-4">
         <Heading>Welcome</Heading>
         <IntroductionSection />
       </section>

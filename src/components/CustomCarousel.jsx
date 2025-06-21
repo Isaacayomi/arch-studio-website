@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+// import Autoplay from "embla-carousel-autoplay";
 import CustomButton from "./CustomButton";
 import ARROW_ICON from "../assets/icons/icon-arrow.svg";
 
@@ -25,7 +25,7 @@ const description = [
 
 export function CustomCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [
-    Autoplay({ delay: 3000, stopOnInteraction: true }),
+    // Autoplay({ delay: 3000, stopOnInteraction: true }),
   ]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -49,7 +49,7 @@ export function CustomCarousel() {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="w-full max-w-xl mx-auto relative lg:max-w-none lg:w-[69.375rem] lg:ml-[4rem]">
+    <div className="w-full max-w-xl mx-auto relative lg:max-w-none lg:w-[69.375rem] lg:ml-[4rem] lg:mb-[6.5rem]">
       <div className="overflow-hidden " ref={emblaRef}>
         <div className="flex ">
           {images.map((img, index) => (
