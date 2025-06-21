@@ -6,20 +6,12 @@ import CustomButton from "./CustomButton";
 const AboutTeaser = () => {
   return (
     <section className="relative md:max-w-[35.8125rem] md:w-full md:mx-auto md:h-[35.8125rem] h-[35rem] mb-[4rem] md:mb-[12.94rem] md:mt-[-5rem] lg:max-w-[69.375rem] lg:h-[35rem]">
-      {/* <img
-        src={TEAM_BG}
-        alt="team-background"
-        className="w-full h-[35.8125rem] lg:h-[35rem] object-cover "
-      /> */}
-
-      {/* Mobile & Tablet Image */}
       <img
         src={TEAM_BG}
         alt="team-background"
         className="w-full object-cover h-[35.8125rem] lg:hidden"
       />
 
-      {/* Desktop Image */}
       <img
         src={TEAM_BG_DESKTOP}
         alt="team-background-desktop"

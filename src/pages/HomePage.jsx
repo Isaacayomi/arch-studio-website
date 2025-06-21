@@ -34,14 +34,16 @@ const HomePage = () => {
           <CustomCarousel />
         </section>
 
-        <section className="lg:relative w-full">
+        <section className="lg:relative w-full mx-auto">
           <Heading>Welcome</Heading>
           <IntroductionSection />
         </section>
 
-        <AboutTeaser />
-        <FeaturedProjectsSection />
-        <Footer />
+        <section className="w-full mx-auto">
+          <AboutTeaser />
+          <FeaturedProjectsSection />
+          <Footer />
+        </section>
       </main>
     </>
   );

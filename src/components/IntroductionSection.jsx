@@ -2,7 +2,7 @@ import IMAGE_WELCOME from "../assets/images/image-welcome.jpg";
 
 const IntroductionSection = () => {
   return (
-    <section className="md:flex md:justify-center lg:flex lg:justify-center lg:items-center lg:gap-[7.81rem] lg:max-w-[69.375rem] lg:w-full lg:mx-auto lg:ml-[6rem] ">
+    <section className="md:flex md:justify-center lg:flex lg:justify-center lg:items-center lg:gap-[7.81rem] lg:max-w-[69.375rem] lg:w-full lg:mx-auto lg:ml-[11rem] ">
       <div className="lg:mt-[16.81rem] xl:ml-0">
         <h3 className="text-very-dark-blue text-[3rem] non-italic font-bold leading-[3.25rem] tracking-[-0.10713rem] max-w-[19.4375rem] w-full mx-auto mt-[8.81rem] mb-[1.38rem] md:max-w-[27.875rem] md:w-full md:text-[4.5rem] md:leading-[4rem] md:tracking-[-0.125rem]  md:mt-[-4.5rem] md:pb-[2.69rem] md:mx-auto lg:pt-[2.7rem] lg:text-[4.5rem] lg:font-bold lg:leading-[4rem] lg:tracking-[-0.125rem] lg:pb-[2.69rem] ">
           Welcome to Arch Studio
