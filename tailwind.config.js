@@ -17,6 +17,11 @@ export default {
         "link-color": "hsla(224, 8%, 53%, 1)",
         "heading-color": "hsla(224, 23%, 94%, 1)",
       },
+
+      backgroundImage: {
+        "hero-bg": "url('/src/assets/images/image-hero-mobile.png')",
+        "hero-bg-medium": "url('/src/assets/images/image-hero-desktop.png')",
+      },
     },
   },
   plugins: [],
