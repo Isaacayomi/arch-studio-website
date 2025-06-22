@@ -7,24 +7,6 @@ import AboutTeaser from "../components/AboutTeaser";
 import FeaturedProjectsSection from "../components/FeaturedProjectsSection";
 import Footer from "../components/Footer";
 
-// const HomePage = () => {
-//   return (
-//     <>
-//       <Navbar />
-//       <section className="md:max-w-[35.8125rem] md:w-full ">
-//         <CustomCarousel />
-//       </section>
-//       <section className="lg:relative lg:w-full lg:px-4">
-//         <Heading>Welcome</Heading>
-//         <IntroductionSection />
-//       </section>
-//       <AboutTeaser />
-//       <FeaturedProjectsSection />
-//       <Footer />
-//     </>
-//   );
-// };
-
 const HomePage = () => {
   return (
     <>

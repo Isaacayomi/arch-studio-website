@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import CustomButton from "./CustomButton";
@@ -24,39 +24,44 @@ const description = [
 ];
 
 export function CustomCarousel() {
+  const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [
-    Autoplay({ delay: 3000, stopOnInteraction: true }),
+    autoplay.current,
   ]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Scroll to a specific slide
   const scrollTo = useCallback(
     (index) => emblaApi && emblaApi.scrollTo(index),
     [emblaApi]
   );
 
-  // Listen for slide change
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
-  // Bind event on embla init
   useEffect(() => {
     if (!emblaApi) return;
     emblaApi.on("select", onSelect);
     onSelect();
   }, [emblaApi, onSelect]);
 
+  const handleMouseEnter = () => autoplay.current?.stop();
+  const handleMouseLeave = () => autoplay.current?.play();
+
   return (
-    <div className="w-full max-w-xl mx-auto relative lg:max-w-none lg:w-[69.375rem] lg:ml-[4rem] lg:mb-[6.5rem]">
-      <div className="overflow-hidden " ref={emblaRef}>
-        <div className="flex ">
+    <div
+      className="w-full max-w-xl mx-auto relative lg:max-w-none lg:w-[69.375rem] lg:ml-[4rem] lg:mb-[6.5rem]"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
           {images.map((img, index) => (
-            <div className="min-w-full relative " key={index}>
+            <div className="min-w-full relative" key={index}>
               <div className="absolute text-white font-spartan px-[2rem] lg:ml-[11.87rem]">
                 {headings[index] && (
-                  <h1 className="text-[3rem] font-bold leading-[3rem] tracking-[-0.075rem] w-full max-w-[19.4375rem] not-italic mt-[7.25rem] mb-[0.69rem] md:max-w-[28.5625rem] md:w-full md:text-[6rem] md:leading-[5rem] md:mt-[11.62rem] lg:max-w-[34rem] lg:w-full lg:font-bold ">
+                  <h1 className="text-[3rem] font-bold leading-[3rem] tracking-[-0.075rem] w-full max-w-[19.4375rem] not-italic mt-[7.25rem] mb-[0.69rem] md:max-w-[28.5625rem] md:w-full md:text-[6rem] md:leading-[5rem] md:mt-[11.62rem] lg:max-w-[34rem] lg:w-full lg:font-bold">
                     {headings[index]}
                   </h1>
                 )}
@@ -67,7 +72,7 @@ export function CustomCarousel() {
                 )}
                 <CustomButton
                   to="/portfolio"
-                  className="flex items-center justify-center mt-[5.19rem] py-[1.56rem] gap-[1.5rem] font-spartan max-w-[15.75rem] w-full bg-very-dark-blue text-white text-right text-[1.125rem] font-bold non-italic leading-[1.525rem] "
+                  className="flex items-center justify-center mt-[5.19rem] py-[1.56rem] gap-[1.5rem] font-spartan max-w-[15.75rem] w-full bg-very-dark-blue text-white text-right text-[1.125rem] font-bold non-italic leading-[1.525rem]"
                 >
                   See Our Portfolio{" "}
                   <span>
@@ -85,8 +90,7 @@ export function CustomCarousel() {
         </div>
       </div>
 
-      {/* Buttons 1–4 */}
-      <div className="absolute bottom-0 flex justify-center lg:ml-[-4.2rem] ">
+      <div className="absolute bottom-0 flex justify-center lg:ml-[-4.2rem]">
         {images.map((_, index) => (
           <button
             key={index}
@@ -95,7 +99,7 @@ export function CustomCarousel() {
               ${
                 selectedIndex === index
                   ? "bg-very-dark-blue text-white"
-                  : "bg-white text-medium-gey "
+                  : "bg-white text-medium-gey"
               }`}
           >
             {index + 1}
@@ -105,3 +109,5 @@ export function CustomCarousel() {
     </div>
   );
 }
+
+export default CustomCarousel;
