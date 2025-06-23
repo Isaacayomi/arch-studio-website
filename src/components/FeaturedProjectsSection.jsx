@@ -52,12 +52,26 @@ const FeaturedProjectsSection = () => {
         </div>
 
         <div className="hidden lg:flex lg:justify-center lg:items-center lg:gap-[1.87rem]">
-          <Project src={PROJECT_SOL_DESKTOP} title="Project Del Sol" num={1} />
-          <Project src={PROJECT_TOWER_DESKTOP} title="228B TOWER" num={2} />
+          <Project
+            src={PROJECT_SOL_DESKTOP}
+            title="Project Del Sol"
+            num={1}
+            description="View all project"
+            to="/portfolio"
+          />
+          <Project
+            src={PROJECT_TOWER_DESKTOP}
+            title="228B TOWER"
+            num={2}
+            description="View all project"
+            to="/portfolio"
+          />
           <Project
             src={PROJECT_PROTOTYPE_DESKTOP}
             title="Le Prototype"
             num={3}
+            description="View all project"
+            to="/portfolio"
           />
         </div>
         <CustomButton

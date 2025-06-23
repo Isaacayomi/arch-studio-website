@@ -1,14 +1,14 @@
 .loader {
   width: 2.5rem;
   height: 2.5rem;
-  font-size: 4rem;
+  font-size: 3rem;
   border-radius: 50%;
   text-indent: -9999em;
   overflow: hidden;
   transform: translateZ(0);
   animation: mulShdSpin 2s infinite ease;
   position: relative;
-  background: #d1d5db;
+  /* background: #d1d5db; */
   box-shadow: 0 -1.5em 0 0 #d1d5db, 1.06em -1.06em 0 0 rgba(209, 213, 219, 0.2),
     1.5em 0 0 0 rgba(209, 213, 219, 0.2),
     1.06em 1.06em 0 0 rgba(209, 213, 219, 0.2),

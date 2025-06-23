@@ -21,7 +21,7 @@ const Project = ({ src, title, num, description, to, className }) => {
         </p>
         <Link
           to={to}
-          className="text-[1.125rem]  font-spartan font-medium leading-[1.5rem] text-white"
+          className="text-[1.125rem]  font-spartan font-medium leading-[1.5rem] text-white lg:mt-[-5rem]"
         >
           {description}
         </Link>
