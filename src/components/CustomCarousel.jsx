@@ -51,7 +51,7 @@ export function CustomCarousel() {
 
   return (
     <div
-      className="w-full max-w-xl mx-auto relative lg:max-w-none lg:w-[69.375rem] lg:ml-[4rem] lg:mb-[6.5rem]"
+      className="w-full max-w-xl mx-auto relative lg:max-w-[69.375rem] lg:w-full lg:mb-[6.5rem]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -90,7 +90,7 @@ export function CustomCarousel() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 flex justify-center lg:ml-[-4.2rem]">
+      <div className="absolute bottom-0 flex justify-center ">
         {images.map((_, index) => (
           <button
             key={index}

@@ -24,9 +24,9 @@ const HomePage = () => {
         <section className="w-full mx-auto">
           <AboutTeaser />
           <FeaturedProjectsSection />
-          <Footer />
         </section>
       </main>
+      <Footer />
     </>
   );
 };
