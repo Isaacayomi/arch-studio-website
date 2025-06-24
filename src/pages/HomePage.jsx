@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <>
       <Navbar />
-      <main className="max-w-[1440px] mx-auto px-[1rem] md:px-[2rem] lg:px-[3rem]">
+      <main className="max-w-[1440px] mx-auto px-[1rem] md:px-[2rem] lg:px-[3rem] overflow-hidden">
         <section className="w-full">
           <CustomCarousel />
         </section>
