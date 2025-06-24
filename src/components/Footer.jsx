@@ -30,7 +30,7 @@ const Footer = () => {
           <Link to="/about">About Us</Link>
         </li>
         <li className="md:hover:text-very-dark-blue">
-          <Link to="contact">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
 
         <CustomButton

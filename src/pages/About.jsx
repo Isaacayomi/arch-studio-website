@@ -23,7 +23,13 @@ const About = () => {
             About
           </Heading>
           <div className="md:absolute md:right-0 md:top-0 max-w-[21.4375rem] w-full mx-auto h-[2.8125rem]   bg-white md:hidden"></div>
-          <PageIntro />
+          <PageIntro
+            heading="Your team of professionals"
+            content=" Our small team of world-class professionals will work with you every
+        step of the way. Strong relationships are at the core of everything we
+        do. This extends to the relationship our projects have with their
+        surroundings."
+          />
         </section>
 
         <section className="md:pt-[12.63rem] lg:pt-[8.81rem] lg:flex lg:items-start lg:justify-center lg:gap-[4rem] lg:pl-[7rem] lg:pr-[3rem] lg:mb-[13.06rem]">
