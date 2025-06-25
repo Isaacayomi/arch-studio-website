@@ -7,7 +7,7 @@ const Portfolio = () => {
   return (
     <div className="">
       <Navbar />
-      <main className="flex flex-wrap justify-center  gap-x-[2rem] px-4 lg:px-8 md:ml-[4rem]">
+      <main className="px-4 md:ml-[4rem] lg:grid lg:grid-cols-3 lg:gap-x-[2rem] lg:gap-y-[2rem] lg:px-8 xl:max-w-[1200px] xl:mx-auto">
         <ProjectList />
       </main>
 

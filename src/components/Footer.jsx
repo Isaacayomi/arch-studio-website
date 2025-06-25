@@ -5,12 +5,12 @@ import ARROW_ICON from "../assets/icons/icon-arrow.svg";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full h-[23.9375rem] max-w-[69rem]  mt-[8.25rem] bg-heading-color md:h-[7.5rem] pt-[4.5rem] md:pt-0 xl:mx-auto ">
+    <footer className="relative w-full h-[23.9375rem] max-w-[69rem]  mt-[8.25rem] bg-heading-color md:h-[7.5rem] pt-[4.5rem] md:pt-0 lg:mx-auto ">
       <Link to="/">
         <img
           src={ICON}
           alt="Logo"
-          className="max-w-[7.5rem] h-[7.5rem] bg-very-dark-blue mx-auto absolute top-[-3rem] left-1/2 -translate-x-1/2 md:left-10 md:top-0 md:translate-x-0 md:mx-0 lg:hidden"
+          className="max-w-[7.5rem] h-[7.5rem] bg-very-dark-blue mx-auto absolute top-[-3rem] left-1/2 -translate-x-1/2 md:left-0 md:top-0 md:translate-x-0 md:mx-0 lg:hidden"
         />
       </Link>
 

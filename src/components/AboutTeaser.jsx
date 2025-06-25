@@ -21,7 +21,7 @@ const AboutTeaser = () => {
       />
 
       <p className="absolute left-0 bottom-[6.5rem] w-[19.4375rem] text-[3rem] font-bold leading-[3.25rem] tracking-[-0.10713rem] text-white pl-[2rem] mb-[1.44rem] md:top-0 md:mt-[10.44rem] md:text-[4.5rem] md:leading-[4rem] md:tracking-[-0.125rem] md:max-w-[27.8125rem] md:w-full lg:left-[4rem]">
-        Small teams, big ideas
+        Small team, big ideas
       </p>
       <CustomButton
         to="/about"

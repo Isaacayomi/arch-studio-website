@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  transition: 0.4s linear;
+}
+
 body {
   overflow-x: hidden;
 }

@@ -59,7 +59,7 @@ export function CustomCarousel() {
         <div className="flex">
           {images.map((img, index) => (
             <div className="min-w-full relative" key={index}>
-              <div className="absolute text-white font-spartan px-[2rem] lg:ml-[11.87rem]">
+              <div className="absolute text-white font-spartan px-[2rem] lg:ml-[5rem] xl:ml-[11.87rem]">
                 {headings[index] && (
                   <h1 className="text-[3rem] font-bold leading-[3rem] tracking-[-0.075rem] w-full max-w-[19.4375rem] not-italic mt-[7.25rem] mb-[0.69rem] md:max-w-[28.5625rem] md:w-full md:text-[6rem] md:leading-[5rem] md:mt-[11.62rem] lg:max-w-[34rem] lg:w-full lg:font-bold">
                     {headings[index]}
@@ -83,6 +83,7 @@ export function CustomCarousel() {
               <img
                 src={img}
                 alt={`Slide ${index + 1}`}
+                loading="lazy"
                 className="w-full h-[35rem] object-cover md:mt-[0.8rem] md:h-[45rem]  lg:max-w-[69.375rem] lg:w-full"
               />
             </div>
@@ -90,12 +91,12 @@ export function CustomCarousel() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 flex justify-center ">
+      <div className="absolute bottom-0 flex justify-center  ">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollTo(index)}
-            className={`lg:max-w-[5rem] lg:w-full lg:h-[5rem] lg:px-[1.94rem] lg:text-[1.125rem] lg:text-center lg:font-bold font-spartan hidden lg:block w-full max-w-8 md:h-8 md:text-sm md:font-medium border border-white
+            className={`  lg:max-w-[5rem] lg:w-full lg:h-[5rem] lg:px-[1.94rem]  lg:text-[1.125rem] lg:text-center lg:font-bold font-spartan hidden lg:block w-full max-w-8 md:h-8 md:text-sm md:font-medium border border-white
               ${
                 selectedIndex === index
                   ? "bg-very-dark-blue text-white"

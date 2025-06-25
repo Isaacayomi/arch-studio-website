@@ -89,7 +89,7 @@ const ProjectList = () => {
   return (
     <>
       {projects.map(({ src, description, title }, i) => (
-        <div key={i} className="w-full md:w-[43rem] lg:w-[22rem] lg:mb-10">
+        <div key={i}>
           <Project
             className="bottom-8"
             src={src}
