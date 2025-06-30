@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ICON from "../assets/icons/icon.svg";
 import CustomButton from "./CustomButton";
 import ARROW_ICON from "../assets/icons/icon-arrow.svg";
@@ -24,13 +24,13 @@ const Footer = () => {
         </Link>
 
         <li className="md:hover:text-very-dark-blue">
-          <Link to="/portfolio">Portfolio</Link>
+          <NavLink to="/portfolio">Portfolio</NavLink>
         </li>
         <li className="md:hover:text-very-dark-blue">
-          <Link to="/about">About Us</Link>
+          <NavLink to="/about">About Us</NavLink>
         </li>
         <li className="md:hover:text-very-dark-blue">
-          <Link to="/contact">Contact</Link>
+          <NavLink to="/contact">Contact</NavLink>
         </li>
 
         <CustomButton

@@ -5,6 +5,7 @@ import PageIntro from "../components/PageIntro";
 import Footer from "../components/Footer";
 import PageHeading from "../components/PageHeading";
 import Address from "../components/Address";
+import Form from "../components/Form";
 import CONTACT_HERO_IMG from "../assets/images/contact-hero-image-mobile.png";
 import CONTACT_HERO_IMG_DESKTOP from "../assets/images/contact-hero-image-desktop.png";
 import MOBILE_MAP from "../assets/images/mobile-map.png";
@@ -54,7 +55,7 @@ const Contact = () => {
           </div>
         </section>
 
-        <section className="w-full max-w-[69rem] mx-auto px-[1.5rem]">
+        <section className="w-full max-w-[69rem] mx-auto px-[1.5rem] mb-[9.19rem]">
           <img
             src={DESKTOP_MAP}
             alt="Map"
@@ -68,6 +69,7 @@ const Contact = () => {
           />
         </section>
       </main>
+      <Form />
       <Footer />
     </div>
   );

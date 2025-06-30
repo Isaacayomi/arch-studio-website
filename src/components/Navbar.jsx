@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import ICON_CLOSE from "../assets/icons/icon-close.svg";
 import ICON_HAMBURGER from "../assets/icons/icon-hamburger.svg";
 import HOME_ICON from "../assets/icons/home-icon.svg";
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="relative z-40 md:flex md:items-center md:flex-start md:pl-[6rem] md: lg:justify-start lg:pl-[5.37rem] xl:pl-[47rem]">
+      <div className="relative z-40 md:flex md:items-center md:flex-start md:pl-[6rem] md: lg:justify-start lg:pl-[5.37rem] 2xl:pl-[47rem]">
         <img
           src={pageIndex}
           alt={pageIndex}
@@ -58,22 +58,25 @@ const Navbar = () => {
           <ul className="absolute top-full left-0 w-full px-[2rem] md:relative md:px-0">
             <div className="flex flex-col items-start pl-[3rem] py-[2.44rem] font-spartan text-[2rem] font-bold leading-[2.5rem] bg-very-light-grey  md:flex-row md:text-[1.125rem] md:text-link-color md:gap-[3.81rem] md:bg-transparent md:pt-[2rem]">
               <li className="pb-[1.06rem] md:cursor-pointer">
-                <Link to="/portfolio" className="md:hover:text-very-dark-blue">
+                <NavLink
+                  to="/portfolio"
+                  className="md:hover:text-very-dark-blue"
+                >
                   Portfolio
-                </Link>
+                </NavLink>
               </li>
               <li className="pb-[1.06rem] md:cursor-pointer">
-                <Link
+                <NavLink
                   to="/about"
                   className="whitespace-nowrap md:hover:text-very-dark-blue"
                 >
                   About Us
-                </Link>
+                </NavLink>
               </li>
               <li className="pb-[1.06rem] md:cursor-pointer">
-                <Link to="/contact" className="md:hover:text-very-dark-blue">
+                <NavLink to="/contact" className="md:hover:text-very-dark-blue">
                   Contact
-                </Link>
+                </NavLink>
               </li>
             </div>
           </ul>
