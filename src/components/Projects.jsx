@@ -14,7 +14,7 @@ const Project = ({ src, title, num, description, to, className }) => {
       <div className="relative "></div>
 
       <div
-        className={`${className} absolute bottom-0 pl-[1.5rem] md:bottom-[2.3rem] md:pl-[2.5rem]`}
+        className={`${className} absolute bottom-[0.7rem] pl-[1.5rem] md:bottom-[2.3rem] md:pl-[2.5rem]`}
       >
         <p className="mt-[6rem] md:mt-[12.5rem] text-white font-spartan text-[2rem] font-bold leading-[2.5rem]">
           {title}
