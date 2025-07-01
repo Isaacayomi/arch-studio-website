@@ -1,13 +1,50 @@
 import IMAGE_WELCOME from "../assets/images/image-welcome.jpg";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+import gsap from "gsap";
 
 const IntroductionSection = () => {
+  useGSAP(() => {
+    const paragraphSplit = new SplitText("#paragraph", {
+      type: "words, chars",
+    });
+    gsap.fromTo(
+      paragraphSplit.chars,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        delay: 1,
+        duration: 3,
+        stagger: 0.05,
+        ease: "bounce.inOut",
+        scrub: true,
+        scrollTrigger: {
+          trigger: "#welcome",
+          start: "top 100%",
+          end: "top 50%",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
   return (
     <section className="md:flex md:justify-center lg:flex lg:justify-center lg:items-center lg:gap-[7.81rem] lg:max-w-[69.375rem] lg:w-full lg:mx-auto  ">
       <div className="lg:mt-[16.81rem] xl:ml-0">
-        <h3 className="text-very-dark-blue text-[3rem] non-italic font-bold leading-[3.25rem] tracking-[-0.10713rem] max-w-[19.4375rem] w-full mx-auto mt-[8.81rem] mb-[1.38rem] md:max-w-[27.875rem] md:w-full md:text-[4.5rem] md:leading-[4rem] md:tracking-[-0.125rem]  md:mt-[-4.5rem] md:pb-[2.69rem] md:ml-0 lg:pt-[2.7rem] lg:text-[4.5rem] lg:font-bold lg:leading-[4rem] lg:tracking-[-0.125rem] lg:pb-[2.69rem] lg:ml-[5rem]  ">
+        <h3
+          id="welcome"
+          className="text-very-dark-blue text-[3rem] non-italic font-bold leading-[3.25rem] tracking-[-0.10713rem] max-w-[19.4375rem] w-full mx-auto mt-[8.81rem] mb-[1.38rem] md:max-w-[27.875rem] md:w-full md:text-[4.5rem] md:leading-[4rem] md:tracking-[-0.125rem]  md:mt-[-4.5rem] md:pb-[2.69rem] md:ml-0 lg:pt-[2.7rem] lg:text-[4.5rem] lg:font-bold lg:leading-[4rem] lg:tracking-[-0.125rem] lg:pb-[2.69rem] lg:ml-[5rem]  "
+        >
           Welcome to Arch Studio
         </h3>
-        <p className="font-spartan max-w-[19.375rem] w-full mx-auto text-dark-grey mb-[7.06rem] md:max-w-[35.75rem] md:w-full md:text-[1.125rem] md:font-medium md:leading-[1.5rem] md:pb-[14.56rem] lg:ml-[5rem]">
+        <p
+          id="paragraph"
+          className="font-spartan max-w-[19.375rem] w-full mx-auto text-dark-grey mb-[7.06rem] md:max-w-[35.75rem] md:w-full md:text-[1.125rem] md:font-medium md:leading-[1.5rem] md:pb-[14.56rem] lg:ml-[5rem]"
+        >
           We have a unique network and skillset to help bring your projects to
           life. Our small team of highly skilled individuals combined with our
           large network put us in a strong position to deliver exceptional
@@ -24,7 +61,7 @@ const IntroductionSection = () => {
         </p>
       </div>
 
-      <div>
+      <div id="welcom-image">
         <img
           src={IMAGE_WELCOME}
           alt="Welcome image"

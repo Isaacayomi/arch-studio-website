@@ -3,6 +3,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import CustomButton from "./CustomButton";
 import ARROW_ICON from "../assets/icons/icon-arrow.svg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
 const images = [
   "./images/paramour.svg",
@@ -24,6 +27,63 @@ const description = [
 ];
 
 export function CustomCarousel() {
+  useGSAP(() => {
+    gsap.fromTo(
+      "#custom-carousel",
+      { opacity: 0, y: 100 },
+      { opacity: 1, duration: 1, ease: "power2.inOut", y: 0 }
+    );
+
+    const headingSplit = new SplitText("#heading", { type: "words, chars" });
+    const descriptionSplit = new SplitText("#description", { type: "lines" });
+
+    gsap.fromTo(
+      headingSplit.chars,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.05,
+        ease: "bounce.inOut",
+        scrub: true,
+      }
+    );
+
+    gsap.fromTo(
+      descriptionSplit.lines,
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        delay: 1,
+        duration: 0.5,
+        stagger: 0.05,
+        ease: "power2.inOut",
+        scrub: true,
+      }
+    );
+
+    gsap.fromTo(
+      "#custom-button",
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        delay: 1.5,
+        duration: 0.5,
+        ease: "bounce.inOut",
+        scrub: true,
+      }
+    );
+  }, []);
+
   const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [
     autoplay.current,
@@ -51,6 +111,7 @@ export function CustomCarousel() {
 
   return (
     <div
+      id="custom-carousel"
       className="w-full max-w-xl mx-auto relative lg:max-w-[69.375rem] lg:w-full lg:mb-[6.5rem]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -61,18 +122,24 @@ export function CustomCarousel() {
             <div className="min-w-full relative" key={index}>
               <div className="absolute text-white font-spartan px-[2rem] lg:ml-[5rem] xl:ml-[11.87rem]">
                 {headings[index] && (
-                  <h1 className="text-[3rem] font-bold leading-[3rem] tracking-[-0.075rem] w-full max-w-[19.4375rem] not-italic mt-[7.25rem] mb-[0.69rem] md:max-w-[28.5625rem] md:w-full md:text-[6rem] md:leading-[5rem] md:mt-[11.62rem] lg:max-w-[34rem] lg:w-full lg:font-bold">
+                  <h1
+                    id="heading"
+                    className="text-[3rem] font-bold leading-[3rem] tracking-[-0.075rem] w-full max-w-[19.4375rem] not-italic mt-[7.25rem] mb-[0.69rem] md:max-w-[28.5625rem] md:w-full md:text-[6rem] md:leading-[5rem] md:mt-[11.62rem] lg:max-w-[34rem] lg:w-full lg:font-bold"
+                  >
                     {headings[index]}
                   </h1>
                 )}
                 {description[index] && (
-                  <p className="w-full max-w-[19.4375rem] md:text-[1.125rem] md:max-w-[28.5625rem] md:w-full md:font-medium lg:max-w-[27.8125rem] lg:w-full">
+                  <p
+                    id="description"
+                    className="w-full max-w-[19.4375rem] md:text-[1.125rem] md:max-w-[28.5625rem] md:w-full md:font-medium lg:max-w-[27.8125rem] lg:w-full"
+                  >
                     {description[index]}
                   </p>
                 )}
                 <CustomButton
                   to="/portfolio"
-                  className="flex items-center justify-center mt-[5.19rem] py-[1.56rem] gap-[1.5rem] font-spartan max-w-[15.75rem] w-full bg-very-dark-blue text-white text-right text-[1.125rem] font-bold non-italic leading-[1.525rem]"
+                  className="flex items-center justify-center mt-[5.19rem] py-[1.56rem] gap-[1.5rem] font-spartan max-w-[15.75rem] w-full bg-very-dark-blue text-white text-right text-[1.125rem] font-bold non-italic leading-[1.525rem] "
                 >
                   See Our Portfolio{" "}
                   <span>

@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import ICON_CLOSE from "../assets/icons/icon-close.svg";
 import ICON_HAMBURGER from "../assets/icons/icon-hamburger.svg";
@@ -29,10 +31,28 @@ const Navbar = () => {
     return () => document.body.classList.remove("overflow-hidden");
   }, [toggle]);
 
+  useGSAP(() => {
+    gsap.fromTo(
+      "#nav",
+      { opacity: 0, y: -100 },
+      { opacity: 1, duration: 1, ease: "power2.inOut", y: 0 }
+    );
+
+    gsap.fromTo(
+      "#page-icon",
+      { opacity: 0, x: -20 },
+      { opacity: 1, duration: 2, ease: "power2.inOut", x: 0 }
+    );
+  }, []);
+
   return (
     <>
-      <div className="relative z-40 md:flex md:items-center md:flex-start md:pl-[6rem] md: lg:justify-start lg:pl-[5.37rem] 2xl:pl-[47rem]">
+      <div
+        id="nav"
+        className="relative z-40 md:flex md:items-center md:flex-start md:pl-[6rem] md: lg:justify-start lg:pl-[5.37rem] 2xl:pl-[47rem]"
+      >
         <img
+          id="page-icon"
           src={pageIndex}
           alt={pageIndex}
           className="hidden md:block absolute left-0 top-0 pl-[3.94rem]"

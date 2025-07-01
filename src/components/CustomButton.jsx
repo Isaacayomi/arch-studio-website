@@ -4,6 +4,7 @@ const CustomButton = ({ children, className, to }) => {
   return (
     <Link
       to={to}
+      id="custom-button"
       className={`${className} hover:bg-dark-grey active:bg-light-grey`}
     >
       {children}
