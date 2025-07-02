@@ -69,19 +69,6 @@ export function CustomCarousel() {
         scrub: true,
       }
     );
-
-    gsap.fromTo(
-      "#custom-button",
-      { opacity: 0, y: 20 },
-      {
-        opacity: 1,
-        y: 0,
-        delay: 1.5,
-        duration: 0.5,
-        ease: "bounce.inOut",
-        scrub: true,
-      }
-    );
   }, []);
 
   const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));

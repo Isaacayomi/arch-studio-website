@@ -95,6 +95,7 @@ const ProjectList = () => {
             src={src}
             description={description}
             title={title}
+            index={i}
           />
         </div>
       ))}
