@@ -1,29 +1,37 @@
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
+import { useLayoutEffect, useRef, useEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const PageHeading = ({ prefix, keyword, className }) => {
   const headingRef = useRef();
 
-  useGSAP(() => {
-    gsap.fromTo(
-      headingRef.current,
-      { opacity: 0, y: 60 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      }
-    );
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            invalidateOnRefresh: true,
+          },
+        }
+      );
+    }, headingRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    ScrollTrigger.refresh(); // Ensures correct positioning in production
   }, []);
 
   return (
