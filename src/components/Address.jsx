@@ -1,13 +1,44 @@
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
 import ARROW_ICON from "../assets/icons/icon-right-arrow.png";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Address = ({ heading, mail, address, phone }) => {
+  const addressRef = useRef();
+
+  useGSAP(() => {
+    gsap.fromTo(
+      addressRef.current,
+      { opacity: 0, y: 60 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: addressRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
+
   return (
-    <div className="text-dark-grey font-spartan text-[1.125rem] max-w-[19.4375rem] w-full mx-auto pl-2 mb-[2.5rem] md:max-w-[35.8125rem] ">
+    <div
+      ref={addressRef}
+      className="text-dark-grey font-spartan text-[1.125rem] max-w-[19.4375rem] w-full mx-auto pl-2 mb-[2.5rem] md:max-w-[35.8125rem]"
+    >
       <p className="hidden lg:block text-[1.125rem] font-bold leading-[2.1875rem] pb-[0.87rem]">
         {heading}
       </p>
-      <div className="md:flex md:items-center md:justify-between md:gap-[4.44rem] ">
-        <p className=" text-[1.125rem] font-bold leading-[2.1875rem] pb-[0.87rem] lg:hidden">
+
+      <div className="md:flex md:items-center md:justify-between md:gap-[4.44rem]">
+        <p className="text-[1.125rem] font-bold leading-[2.1875rem] pb-[0.87rem] lg:hidden">
           {heading}
         </p>
 
@@ -17,6 +48,7 @@ const Address = ({ heading, mail, address, phone }) => {
           <p>Phone: {phone}</p>
         </div>
       </div>
+
       <p className="flex items-center flex-start mt-[2.69rem] gap-[1.5rem] font-bold text-[#1B1D23] md:hover:cursor-pointer">
         View on Map{" "}
         <span>
@@ -26,4 +58,5 @@ const Address = ({ heading, mail, address, phone }) => {
     </div>
   );
 };
+
 export default Address;

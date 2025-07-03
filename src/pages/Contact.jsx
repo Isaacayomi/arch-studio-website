@@ -1,3 +1,8 @@
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
 import Navbar from "../components/Navbar";
 import HeroImage from "../components/HeroImage";
 import Heading from "../components/Heading";
@@ -11,7 +16,29 @@ import CONTACT_HERO_IMG_DESKTOP from "../assets/images/contact-hero-image-deskto
 import MOBILE_MAP from "../assets/images/mobile-map.png";
 import DESKTOP_MAP from "../assets/images/desktop-map.png";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Contact = () => {
+  const mapRef = useRef();
+
+  useGSAP(() => {
+    gsap.fromTo(
+      mapRef.current,
+      { opacity: 0, y: 80 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: mapRef.current,
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
+
   return (
     <div className="overflow-hidden">
       <Navbar />
@@ -55,7 +82,10 @@ const Contact = () => {
           </div>
         </section>
 
-        <section className="w-full max-w-[69rem] mx-auto px-[1.5rem] mb-[9.19rem]">
+        <section
+          ref={mapRef}
+          className="w-full max-w-[69rem] mx-auto px-[1.5rem] mb-[9.19rem]"
+        >
           <img
             src={DESKTOP_MAP}
             alt="Map"

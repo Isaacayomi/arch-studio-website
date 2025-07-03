@@ -1,3 +1,8 @@
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
 import Navbar from "../components/Navbar";
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
@@ -12,7 +17,32 @@ import HERO_IMG from "../assets/images/image-hero-mobile.png";
 import HERO_IMG_DESKTOP from "../assets/images/image-hero-desktop.png";
 import IMAGE_HERITAGE from "../assets/images/image-heritage.jpg";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const About = () => {
+  const imageRef = useRef();
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        imageRef.current,
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    },
+    { scope: imageRef }
+  );
+
   return (
     <div>
       <Navbar />
@@ -54,6 +84,7 @@ const About = () => {
           </div>
           <div className="hidden lg:block lg:max-w-[35.5rem] lg:pt-[1rem]">
             <img
+              ref={imageRef}
               src={IMAGE_HERITAGE}
               alt="Heritage image"
               className="w-full object-cover"
