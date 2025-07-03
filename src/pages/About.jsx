@@ -82,9 +82,11 @@ const About = () => {
               every project.
             </PageDetails>
           </div>
-          <div className="hidden lg:block lg:max-w-[35.5rem] lg:pt-[1rem]">
+          <div
+            ref={imageRef}
+            className="hidden lg:block lg:max-w-[35.5rem] lg:pt-[1rem]"
+          >
             <img
-              ref={imageRef}
               src={IMAGE_HERITAGE}
               alt="Heritage image"
               className="w-full object-cover"
