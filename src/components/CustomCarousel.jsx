@@ -8,10 +8,10 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 
 const images = [
-  "./images/paramour.svg",
-  "./images/seraph.svg",
-  "./images/federal.svg",
-  "./images/trinity.svg",
+  "./images/paramour.webp",
+  "./images/seraph.webp",
+  "./images/federal.webp",
+  "./images/trinity.webp",
 ];
 const headings = [
   "Project Paramour",
